@@ -1,9 +1,10 @@
+// Вывести все простые числа от 1 до 1000
 package HW1;
 public class ProstyeChisla {
     public static void main(String[] args) {
 
     boolean flag = true;
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i < 1000; i++) {
             flag = true;
             for (int j = 2; j < i; j++)
                 {

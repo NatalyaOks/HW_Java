@@ -1,3 +1,5 @@
+//Реализовать простой калькулятор
+
 package HW1;
 import java.util.Scanner;
 
@@ -11,6 +13,7 @@ public class Calculator {
         System.out.printf("Укажите какое действие нужно сделать: ");  
         char c = scan.next().charAt(0); 
         double ans;    
+        scan.close();
         switch (c) {
             case '+': ans = a + b;
             break;

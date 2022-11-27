@@ -1,29 +1,44 @@
+// Вычислить n-ое треугольного число(сумма чисел от 1 до n), n! (произведение чисел от 1 до n)
+
 package HW1;
 import java.util.Scanner;
 
 public class Primer {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int top = scanner.nextInt();
-        for (int i=2;i<top;i++){
-            if(checkSimple(i))
-                System.out.println(i);
-        }
-    }
+        Scanner scan = new Scanner(System.in);
+        int result = 0;
+        int result2 = 0;
+        
+            System.out.printf("Введите число: ");
+            int number = scan.nextInt();
+            if (number > 0){
+                result = factorial(number);
+                System.out.printf("Факториал числа %d = %d .\n",number, result);
+                result2 = rectangle(number);
+                System.out.printf("%d-e треугольное число = %d .\n",number, result2);
+                scan.close();
+            }}
     
-    public static boolean checkSimple(int i){
-        if (i<=1)
-            return false;
-        else if (i <=3)
-            return true;
-        else if (i%2==0 || i %3 ==0)
-            return false;
-        int n = 5;
-        while (n*n <=i){
-            if (i % n ==0 || i % (n+2) == 0)
-                return false;
-            n=n+6;
+
+    private static int factorial(int num){
+        int factor = 1;
+        if (num == 1 || num == 0){
+            return factor;
         }
-        return true;
+        factor = num * factorial(num -1);
+        return factor;
+    }
+
+
+    private static int rectangle (int num){
+        int rectan = 1;
+        if (num == 1 || num == 0){
+            return rectan;
+        }
+        rectan = num + rectangle(num -1);
+        return rectan;
+    }
+    private static boolean isNumeric(String str){
+        return str.matches("\\d$");
     }
 }
